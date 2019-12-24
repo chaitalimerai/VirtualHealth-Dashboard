@@ -1,18 +1,282 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<style>
-body
-{
-Background-color:red;
-}	
-</style>
-<title>Page Title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VirtualHealth-Dashboard</title>
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <!-- Link for font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Link to google-fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+
 </head>
+
 <body>
+    <!-- Start:Wrapper -->
+    <section id="wrapper" class="d-flex flex-column">
+        <!-- Start: Top-header -->
+        <header id="top-header" class="d-flex">
+            <div class="logo-container ">
+                <span class="logo text-primary">Virtual</span>
+                <span class="logo text-light">Health</span>
+            </div>
+            <input type="checkbox" name="hamburger" id="toggle-btn">
+            <label for="toggle-btn" class="nav-toggle d-none">
+                <span class="fa fa-bars"></span>
+            </label>
+            <nav class="top-nav align-center d-flex">
+                <ul class="top-navbar">
+                    <li class="top-nav-list-items">
+                        <a href="#" class=".active">admin</a>
+                    </li>
+                    <li class="top-nav-list-items">
+                        <a href="#">records</a>
+                    </li>
+                    <li class="top-nav-list-items">
+                        <a href="#">interact</a>
+                    </li>
+                    <li class="top-nav-list-items">
+                        <a href="#">calender</a>
+                    </li>
+                    <li class="top-nav-list-items">
+                        <a href="#">providers</a>
+                    </li>
+                    <li class="top-nav-list-items">
+                        <a href="#">settings</a>
+                    </li>
+                </ul>
+            </nav>
+            <figure class="user-info d-flex align-center">
+                <img src="./assets/images/profile-image.jfif" alt="user-profile" class="user-profile mr-1">
+                <select name="user-setting" id="user-setting">
+                    <option value="Kristen Mceller">Kristen Mceller</option>
+                </select>
+            </figure>
+        </header>
+        <!-- End: Top-header -->
+        <!-- Start:content-wrapper -->
+        <section id="content-wrapper" class="d-flex">
+            <!-- Start:side-nav -->
+            <aside class="side-nav d-flex flex-column">
+                <nav class="side-navbar">
+                    <ul>
+                        <li class="side-nav-list-items">
+                            <a href="#">
+                                <span class="sidenav-link-icon text-primary fa-fw fa fa-user-o"></span>
+                                <span class="sidenav-link-title text-white">Clients</span>
+                            </a>
+                        </li>
+                        <li class="side-nav-list-items">
+                            <a href="#" class="active">
+                                <span class="sidenav-link-icon text-primary fa-fw fa fa-heartbeat text-white"></span>
+                                <span class="sidenav-link-title text-white">Monitoring</span>
+                            </a>
+                        </li>
+                        <li class="side-nav-list-items">
+                            <a href="#">
+                                <span class="sidenav-link-icon text-primary fa-fw fa fa-pie-chart"></span>
+                                <span class="sidenav-link-title text-white">Reporting</span>
+                            </a>
+                        </li>
+                        <li class="side-nav-list-items">
+                            <a href="#">
+                                <span class="sidenav-link-icon text-primary fa-fw fa fa-map-marker"></span>
+                                <span class="sidenav-link-title text-white">Locations</span>
+                            </a>
+                        </li>
+                        <li class="side-nav-list-items">
+                            <a href="#">
+                                <span class="sidenav-link-icon text-primary fa-fw fa fa-file-text-o"></span>
+                                <span class="sidenav-link-title text-white">Logs</span>
+                            </a>
+                        </li>
 
-<h1>This is a Heading</h1>
-<p>This is a paragraph.</p>
+                    </ul>
+                </nav>
+                <div class="aside-footer text-white d-flex bg-dark">
+                    <span class="fa fa-compass footer-icon"></span>
+                    <span>Need Help?</span>
+                </div>
+            </aside>
+            <!-- Start:main-content -->
+            <main class="main-content bg-secondary d-flex flex-column">
+                <!-- Content-heading -->
+                <div class="content-heading d-flex align-center">
+                    <nav class="secondary-navbar d-flex">
+                        <ul class="secondary-navlist">
+                            <li class="secondary-navlist-items  ">
+                                <a href="#" class="selected "> Alerts</a>
+                                <span class="notification"></span>
+                            </li>
+                            <li class="secondary-navlist-items">
+                                <a href="#"> Tasks</a>
+                            </li>
+                            <li class="secondary-navlist-items">
+                                <a href="#"> Risk </a>
+                            </li>
+                            <li class="secondary-navlist-items">
+                                <a href="#"> Authorizations</a>
+                            </li>
+                            <li class="secondary-navlist-items">
+                                <a href="#"> Vitals</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="header-radio-group d-flex align-center pr-2"
+                        style="display:flex;justify-content: center;">
+                        <input type="radio" name="problem" id="resolved" checked>
+                        <label for="resolved">Resolved</label>
+                        <input type="radio" name="problem" id="unresolved">
+                        <label for="unresolved">Unresolved</label>
+                    </div>
+                </div>
+                <!-- Content-body -->
+                <div class="content-body d-flex flex-column p-4 overflow-hidden">
+                    <div class="d-flex flex-column  bg-white overflow-auto width-100">
+                        <!-- Start : Form  -->
+                        <form action="" class="form-group d-flex flex-column ">
+                            <div class="row d-flex flex-wrap">
+                                <div class="form-field">
+                                    <label for="first-name">First name</label>
+                                    <input class="input-control" type="text" name="firstname" id="first-name"
+                                        placeholder="Please Enter Firstname">
+                                </div>
+                                <div class="form-field">
+                                    <label for="last-name">Last name</label>
+                                    <input class="input-control" type="text" name="lastname" id="last-name"
+                                        placeholder="Please Enter Lastname">
 
+                                </div>
+                                <div class="form-field">
+                                    <label for="start-date">Start date</label>
+                                    <input class="input-control" type="text" name="startdate" id="start-date"
+                                        placeholder="08.01.2016">
+                                    <span class="fa fa-calendar calender-icon"></span>
+
+                                </div>
+                                <div class="form-field">
+                                    <label for="end-date">End date</label>
+                                    <input class="input-control" type="text" name="enddate" id="end-date"
+                                        placeholder="10.01.2016">
+                                    <span class="fa fa-calendar calender-icon"></span>
+                                </div>
+                            </div>
+                            <div class="row d-flex flex-wrap mt-3">
+                                <div class="form-field  col-50">
+                                    <label for="date-range">Date range</label>
+                                    <div class="radio-group d-flex flex-wrap">
+                                        <input type="radio" class="d-none" name="days" id="1day" checked>
+                                        <label for="1day" class="radio-label">1 day</label>
+                                        <input type="radio" class="d-none" name="days" id="7day">
+                                        <label for="7day" class="radio-label">7 days</label>
+                                        <input type="radio" class="d-none" name="days" id="30day">
+                                        <label for="30day" class="radio-label">30 days</label>
+                                        <input type="radio" class="d-none" name="days" id="90day">
+                                        <label for="90day" class="radio-label">90 days</label>
+                                        <input type="radio" class="d-none" name="days" id="all">
+                                        <label for="all" class="radio-label">All </label>
+                                    </div>
+                                </div>
+                                <div class="form-field ">
+                                    <label for="source">Source</label>
+                                    <select class="input-control" name="Selectsource" id="source">
+                                        <option value="">HTML</option>
+                                        <option value="">CCS</option>
+                                        <option value="">Bootstrap</option>
+                                    </select>
+                                </div>
+                                <div class="form-field d-flex flex-row justify-content-between align-end">
+                                    <button name="search" class="btn bg-primary">Search</button>
+                                    <button name="cross" class=" round-btn">
+                                        <span class="fa fa-times"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                        <!-- End: Form -->
+                        <div class="responsive-table d-flex ">
+                            <table class="data-table text-grey">
+                                <thead>
+                                    <tr>
+                                        <th class="data-table-headings">Date/Time of alert</th>
+                                        <th class="data-table-headings">Client Name</th>
+                                        <th class="data-table-headings">Source</th>
+                                        <th class="data-table-headings">Value</th>
+                                        <th class="data-table-headings">Alert</th>
+                                        <th class="data-table-headings">Alert type</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="data-table-items">08.01.2016 01:01 PM</td>
+                                        <td class="data-table-items">Doe john</td>
+                                        <td class="data-table-items">Clinical pulse rate</td>
+                                        <td class="data-table-items">N/A</td>
+                                        <td class="data-table-items text-accent">Over 2 days</td>
+                                        <td class="data-table-items">Time-based</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="data-table-items">08.01.2016 01:01 PM</td>
+                                        <td class="data-table-items">Doe john</td>
+                                        <td class="data-table-items">Clinical pulse rate</td>
+                                        <td class="data-table-items">N/A</td>
+                                        <td class="data-table-items text-accent">Over 2 days</td>
+                                        <td class="data-table-items">Time-based</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="data-table-items">08.01.2016 01:01 PM</td>
+                                        <td class="data-table-items">Doe john</td>
+                                        <td class="data-table-items">Clinical pulse rate</td>
+                                        <td class="data-table-items">N/A</td>
+                                        <td class="data-table-items text-accent">Over 2 days</td>
+                                        <td class="data-table-items">Time-based</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="data-table-items">08.01.2016 01:01 PM</td>
+                                        <td class="data-table-items">Doe john</td>
+                                        <td class="data-table-items">Clinical pulse rate</td>
+                                        <td class="data-table-items text-accent">
+                                            <b>9Bms</b>
+                                        </td>
+                                        <td class="data-table-items text-accent">Over 2 days</td>
+                                        <td class="data-table-items">Time-based</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="data-table-items">08.01.2016 01:01 PM</td>
+                                        <td class="data-table-items">Doe john</td>
+                                        <td class="data-table-items">Clinical pulse rate</td>
+                                        <td class="data-table-items">N/A</td>
+                                        <td class="data-table-items text-accent">Over 2 days</td>
+                                        <td class="data-table-items">Time-based</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="data-table-items">08.01.2016 01:01 PM</td>
+                                        <td class="data-table-items">Doe john</td>
+                                        <td class="data-table-items">Clinical pulse rate</td>
+                                        <td class="data-table-items">N/A</td>
+                                        <td class="data-table-items text-accent">Over 2 days</td>
+                                        <td class="data-table-items">Time-based</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                    <footer class="pagination d-flex">
+                        <button type="button" class="round-btn fa fa-angle-left"></button>
+                        <span class="text-grey">Page 1 of 4</span>
+                        <button type="button" class="round-btn fa fa-angle-right"></button>
+                        </foooter>
+                </div>
+            </main>
+        </section>
+        <!-- End: Content-wrapper -->
+    </section>
+    <!-- End:Wrapper -->
 </body>
+
 </html>
